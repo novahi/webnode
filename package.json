@@ -14,18 +14,15 @@
     "url": "git+https://github.com/sondnpt00343/nodejs_blog.git"
   },
   "keywords": [
-    "f8",
-    "blog",
-    "f8",
-    "nodejs",
-    "nodejs"
+    "Qiz",
+    "phamquy"
   ],
-  "author": "sondn",
+  "author": "phamquy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sondnpt00343/nodejs_blog/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/sondnpt00343/nodejs_blog#readme",
+  "homepage": "https://github.com/yonexdu0ra",
   "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },

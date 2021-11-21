@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
 
 const User = new Schema(
     {
@@ -12,6 +14,7 @@ const User = new Schema(
         },
         facebook: { type: String },
         mail: { type: String },
+        slug: { type: String, slug: 'name', unique: true },
     },
     {
         timestamps: true,
