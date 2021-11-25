@@ -3,15 +3,7 @@ const User = require('../models/User');
 
 class SiteController {
     home(req, res, next) {
-        // res.render('home')
-        User.find({})
-            .lean()
-            .then((user) => {
-                res.render('home', {
-                    user,
-                });
-            })
-            .catch(next);
+        res.render('home');
     }
 
     search(req, res, next) {

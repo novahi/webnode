@@ -4,11 +4,17 @@ class UserController {
     show(req, res, next) {
         User.findOne({ slug: req.params.slug })
             .lean()
-            .then((data) => res.render('user', { data }))
+            .then((user) => res.render('viewuser', { user }))
             .catch(next);
     }
     create(req, res, next) {
         res.render('create');
+    }
+    view(req, res, next) {
+        User.find({})
+            .lean()
+            .then((data) => res.render('user', { data }))
+            .catch(next);
     }
     store(req, res, next) {
         const formData = req.body;

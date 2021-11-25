@@ -1,7 +1,26 @@
 
-  <h2>Tên: <h1>{{data.name}}</h1></h2>
-  <h2>Id: <h1>{{data._id}}</h1></h2>
-  <h2>Age: <h1>{{data.age}}</h1></h2>
-  <h2>Address: <h1>{{data.address}}</h1></h2>
-  <h2>Slug: <h1>{{data.slug}}</h1></h2>
+<div class="mt-4">
+    <div class="row">
+
+        {{#each data}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card card-course-item">
+                <a href="/users/{{this.slug}}">
+                    <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+                </a>
+                <div class="card-body">
+                    <a href="/users/{{this.slug}}">
+                        <h5 class="card-title">{{this.facebook}}</h5>
+                    </a>
+                    <p class="card-text">{{this.name}}</p>
+                    <a href="#" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        
+    </div>
+</div>
+
+
 
