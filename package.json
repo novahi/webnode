@@ -1,0 +1,21 @@
+{
+  "name": "Qiz",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": "https://github.com/novahi/qiz.git",
+  "author": "novahi <nguoidungemail1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mongodb": "^4.2.0",
+    "mongoose": "^6.0.13",
+    "mongoose-slug-generator": "^1.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
