@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon src/index.js"
   },
-  "repository": "https://github.com/novahi/qiz.git",
+  "repository": "https://github.com/novahi/webnode.git",
   "author": "novahi <nguoidungemail1@gmail.com>",
   "license": "MIT",
   "dependencies": {
