@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
+
 
 const handlebars = require('express-handlebars');
 
@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 db.connect();
 
-// HTTP logger
-// app.use(morgan('combined'));
+
+
 
 // Template engine
 app.engine(
