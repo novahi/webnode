@@ -24,6 +24,16 @@ class UserController {
             .then(() => res.redirect('/'))
             .catch((err) => res.send(err));
     }
+    edit (req, res, next) {
+        User.findById(req.params.id)
+            .lean()
+            .then(data => res.render('edit', {data}))
+            .catch(next)
+    }
+    update(req, res, next) {
+        User.updateOne({ _id: req.params.id }, req.body)
+            .then(data => res.redirect('/users'))
+    }
 }
 
 module.exports = new UserController();
