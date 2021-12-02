@@ -1,9 +1,9 @@
 {
   "name": "Qiz",
   "version": "1.0.0",
-  "main": "node src/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "src/index.js"
+    "start": "node src/index.js"
   },
   "repository": "https://github.com/novahi/webnode.git",
   "author": "novahi <nguoidungemail1@gmail.com>",
