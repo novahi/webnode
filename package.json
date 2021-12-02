@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "src/index.js"
   },
   "repository": "https://github.com/novahi/webnode.git",
   "author": "novahi <nguoidungemail1@gmail.com>",
