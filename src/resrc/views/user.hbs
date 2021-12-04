@@ -29,7 +29,7 @@
       <th scope="col">#</th>
       <th scope="col">Tên</th>
       <th scope="col">Địa Chỉ</th>
-      <th scope="col">Thời Gian Tạo</th>
+      <th scope="col">Thời Gian</th>
       <th></th>
     </tr>
   </thead>
@@ -37,14 +37,51 @@
     {{#each data}}
     <tr>
       <th scope="row">{{sum @index 1}}</th>
-      <td><a href="/users/{{this.slug}}">{{this.name}}</a></td>
+      <td><a class="btn link-primary" href="/users/{{this.slug}}">{{this.name}}</a></td>
       <td>{{this.address}}</td>
       <td>{{this.createdAt}}</td>
       <td>
-         <a href="/users/{{this._id}}/edit">Sửa</a>
-         <a href="#">Xoá</a>
+         <a href="/users/{{this._id}}/edit" class="btn link-primary">Sửa</a>
+         <a href=""  class="btn link-primary"data-id="{{this._id}}"  data-bs-toggle="modal" data-bs-target="#delete-user" id="btn-delete" >Xóa</a>
       </td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+
+
+<div class="modal fade" id="delete-user" tabindex="-1" aria-labelledby="delete-userLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete-userLabel">Xoá</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn là muốn xoá không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-danger" id="submit-delete">Xoá bỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+<form name="delete"  method="POST"></form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var formDelete = document.forms['delete']
+  var id
+  var btndelete = document.getElementById('delete-user')
+  btndelete.addEventListener('show.bs.modal', function(event) {
+    var button = event.relatedTarget
+    id = button.dataset.id
+  })
+  var submitDelete = document.getElementById('submit-delete')
+  submitDelete.onclick = () => {
+    formDelete.action = `/users/${id}?_method=DELETE`
+    formDelete.submit()
+  }
+})
+</script>

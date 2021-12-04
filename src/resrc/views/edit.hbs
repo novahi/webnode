@@ -1,5 +1,6 @@
-<form action= '/users/{{data._id}}/update?_method=PUT' method="POST"  class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
+<div class="mt-5">
+<form action= '/users/{{data._id}}?_method=PUT' method="POST"  class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4 ">
     <label for="validationCustom01" class="form-label">Họ Tên</label>
     <input type="text" class="form-control" id="validationCustom01" name="name" value="{{data.name}}" required>
     <div class="valid-feedback">
@@ -43,7 +44,7 @@
   <button class="btn btn-primary" type="submit">Submit form</button>
 </div>
 </form>
-
+</div>
 
 <script>
    (function() {

@@ -21,7 +21,7 @@ class UserController {
         const newUser = new User(formData);
         newUser
             .save()
-            .then(() => res.redirect('/'))
+            .then(() => res.redirect('/users'))
             .catch((err) => res.send(err));
     }
     edit (req, res, next) {
@@ -34,6 +34,11 @@ class UserController {
         User.updateOne({ _id: req.params.id }, req.body)
             .then(data => res.redirect('/users'))
     }
+    destroy (req, res, next) {
+        User.deleteOne({ _id: req.params.id })
+            .then(() => res.redirect('back'))
+            .catch(next)
+}
 }
 
 module.exports = new UserController();
