@@ -1,8 +1,106 @@
-<div class='mt-4 col-12' style='word-wrap:break-word'>
-  <h2>Tên: <h1>{{user.name}}</h1></h2>
-  <h2>Id: <h1>{{user._id}}</h1></h2>
-  <h2>Age: <h1>{{user.age}}</h1></h2>
-  <h2>Address: <h1>{{user.address}}</h1></h2>
-  <h2>Slug: <h1>{{user.slug}}</h1></h2>
-</div>
-<script>alert('Đây là thông tin về {{user.name}} !')</script>
+
+
+
+<div class="card mt-4 container justify-content-center placeholder-glow" style="width: 18rem;">
+
+     <img class="card-img-top" alt="Loading...!" id="img">
+
+     <div class="card-body">
+
+       <h5 class="card-title" id="title">
+
+         <span class="placeholder col-7"></span>
+
+       </h5>
+
+       <p class="card-text placeholder-glow" id="text">
+
+         <span class="placeholder col-6"></span>
+
+         <span class="placeholder col-4"></span>
+
+         <span class="placeholder col-2"></span>
+
+         <span class="placeholder col-9"></span>
+
+         <span class="placeholder col-4"></span>
+
+         <span class="placeholder col-2"></span>
+
+         <span class="placeholder col-9"></span>
+
+       </p>
+
+       <p class="card-text" id="mail"></p>
+
+       <p class="card-text" id="ads"></p>
+
+       <a href="#" class="btn btn-primary col-6" id="btn">
+
+       </a>
+
+     </div>
+
+   </div>
+
+<script>
+
+const $$ = document.querySelectorAll.bind(document)
+
+const $ = document.querySelector.bind(document)
+
+const img = $('#img')
+
+const title = $('#title')
+
+const placeholderLoading = $$('.placeholder-glow')
+
+const ads = $('#ads')
+
+const placeholder = $$('.placeholder')
+
+const btn = $('#btn')
+
+const test = $('#text')
+
+const mail = $('#mail')
+
+async function init() {
+
+  await Promise.resolve('{{user.name}}')
+
+    .then(data => {
+
+      img.src = `{{user.image}}`
+
+      test.textContent = `Facebook: fb.com/{{user.facebook}}`
+
+      ads.textContent = `Địa chỉ: {{user.address}}`
+
+      mail.textContent = `mail: {{user.mail}}`
+
+      title.textContent = '{{user.name}}'
+
+      btn.textContent = 'Go'
+
+      btn.href = `fb://profile/{{user.facebook}}`
+
+      placeholderLoading.forEach(x => x.classList.remove('placeholder-glow'))
+
+      placeholder.forEach(x => x.remove('placeholder'))
+
+      return data
+
+    })
+
+    .then(data => console.log(data))
+
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  init()
+
+})
+
+</script>
