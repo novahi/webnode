@@ -10,7 +10,7 @@ const User = new Schema(
         address: { type: String },
         image: {
             type: String,
-            default: 'http://qicute.tk/img/avatar-none.jpeg',
+            default: 'https://qicute.tk/img/avatar-none.jpeg',
         },
         facebook: { type: String },
         mail: { type: String },
