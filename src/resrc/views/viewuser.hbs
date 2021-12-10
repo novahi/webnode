@@ -1,33 +1,48 @@
+<div class="container">
 
+   <div class="card mt-4 container justify-content-center placeholder-glow" style="width: 18rem;">
 
+      <img src="{{user.image}}" class="card-img-top" alt="Loading...!" id="img">
 
-<div class="card mt-4 container justify-content-center placeholder-glow" style="width: 18rem;">
+      <div class="card-body">
 
-     <img src="{{user.image}}" class="card-img-top" alt="Loading...!" id="img">
+         <h5 class="card-title" style="text-align: center" id="title"> {{user.name}}</h5>
 
-     <div class="card-body">
+         <p class="card-text" id="text">
 
-       <h5 class="card-title" id="title">
+            <ion-icon name="logo-facebook"></ion-icon>
 
-         {{user.name}}
+            {{user.facebook}}
 
-       </h5>
+         </p>
 
-       <p class="card-text" id="text">
+         <p class="card-text " id="mail">
 
-         FB: fb.com/{{user.facebook}}
+            <ion-icon name="mail"></ion-icon>
 
-       </p>
+            {{user.mail}}
 
-       <p class="card-text" id="mail">Mail: {{user.mail}}</p>
+         </p>
 
-       <p class="card-text" id="ads">Địa chỉ: {{user.address}}</p>
+         <p class="card-text" id="ads">
 
-       <a href="fb://profile/{{user.facebook}}" class="btn btn-primary col-6" id="btn">
-Go
-       </a>
+            <ion-icon name="home"></ion-icon>
 
-     </div>
+            {{user.address}}
+
+         </p>
+
+         <a href="fb://profile/100030905962677" class="btn btn-primary col-6"  id="btn">Go</a>
+
+      </div>
 
    </div>
 
+</div>
+
+</div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
