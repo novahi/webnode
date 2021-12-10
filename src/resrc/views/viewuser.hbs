@@ -3,40 +3,28 @@
 
 <div class="card mt-4 container justify-content-center placeholder-glow" style="width: 18rem;">
 
-     <img class="card-img-top" alt="Loading...!" id="img">
+     <img src="{{user.image}}" class="card-img-top" alt="Loading...!" id="img">
 
      <div class="card-body">
 
        <h5 class="card-title" id="title">
 
-         <span class="placeholder col-7"></span>
+         {{user.name}}
 
        </h5>
 
-       <p class="card-text placeholder-glow" id="text">
+       <p class="card-text" id="text">
 
-         <span class="placeholder col-6"></span>
-
-         <span class="placeholder col-4"></span>
-
-         <span class="placeholder col-2"></span>
-
-         <span class="placeholder col-9"></span>
-
-         <span class="placeholder col-4"></span>
-
-         <span class="placeholder col-2"></span>
-
-         <span class="placeholder col-9"></span>
+         FB: fb.com/{{user.facebook}}
 
        </p>
 
-       <p class="card-text" id="mail"></p>
+       <p class="card-text" id="mail">Mail: {{user.mail}}</p>
 
-       <p class="card-text" id="ads"></p>
+       <p class="card-text" id="ads">Địa chỉ: {{user.address}}</p>
 
-       <a href="#" class="btn btn-primary col-6" id="btn">
-
+       <a href="fb://profile/{{user.facebook}}" class="btn btn-primary col-6" id="btn">
+Go
        </a>
 
      </div>
