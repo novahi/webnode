@@ -10,7 +10,7 @@ const User = new Schema(
         address: { type: String },
         image: {
             type: String,
-            default: 'https://qicute.tk/img/avatar-none.jpeg',
+            default: 'https://scontent.xx.fbcdn.net/v/t1.30497-1/c379.0.1290.1290a/84628273_176159830277856_972693363922829312_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=12b3be&_nc_ohc=lreSzZHG1jMAX9JAW_Z&_nc_ht=scontent.xx&edm=AHgPADgEAAAA&oh=00_AT-F0FlhZcR4r0t7dBA_rY0UoJmjV5rxCC8hxVQvPxrUlQ&oe=61DA624B',
         },
         facebook: { type: String },
         mail: { type: String },
