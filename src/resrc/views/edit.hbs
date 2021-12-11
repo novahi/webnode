@@ -1,6 +1,8 @@
-<form action= '/users/{{data._id}}?_method=PUT' method="POST"  class="row g-3 needs-validation" novalidate>
+<div class="mt-4">
 
-   <div class="col-md-4 ">
+  <form action='/users/{{data._id}}?_method=PUT' method="POST" class="row g-3 needs-validation" novalidate>
+
+    <div class="col-md-4 ">
 
       <label for="validationCustom01" class="form-label">Họ Tên</label>
 
@@ -8,133 +10,109 @@
 
       <div class="valid-feedback">
 
-         tốt lắm !
+        tốt lắm !
 
       </div>
 
       <div class="invalid-feedback">
 
-         vui lòng nhập trường này !
+        vui lòng nhập trường này !
 
       </div>
 
-   </div>
+    </div>
 
-   <div class="col-md-4">
+    <div class="col-md-4">
 
       <label for="validationCustom02" class="form-label">Tuổi</label>
 
-      <input type="text" class="form-control" id="validationCustom02" name="age"value="{{data.age}}"  required>
+      <input type="text" class="form-control" id="validationCustom02" name="age" value="{{data.age}}" required>
 
       <div class="valid-feedback">
 
-         tốt lắm !
+        tốt lắm !
 
       </div>
 
       <div class="invalid-feedback">
 
-         vui lòng nhập trường này !
+        vui lòng nhập trường này !
 
       </div>
 
-   </div>
+    </div>
 
-   <div class="col-md-4">
+    <div class="col-md-4">
 
       <label for="validationCustom02" class="form-label">Địa chỉ</label>
 
-      <input type="text" class="form-control" id="validationCustom02" name="address"value="{{data.address}}"  required>
+      <input type="text" class="form-control" id="validationCustom02" name="address" value="{{data.address}}" required>
 
       <div class="valid-feedback">
 
-         tốt lắm !
+        tốt lắm !
 
       </div>
 
       <div class="invalid-feedback">
 
-         vui lòng nhập trường này !
+        vui lòng nhập trường này !
 
       </div>
 
-   </div>
+    </div>
 
-   <div class="col-md-4">
-
-      <label for="validationCustom02" class="form-label">ID Facebook</label>
-
-      <input type="text" class="form-control" id="validationCustom02" name="facebook"value="{{data.facebook}}"  required>
-
-      <div class="valid-feedback">
-
-         tốt lắm !
-
-      </div>
-
-      <div class="invalid-feedback">
-
-         vui lòng nhập trường này !
-
-      </div>
-
-   </div>
-
-   <div class="col-md-4">
-
-      <a href="https://findidfb.com" target=”_blank" class="btn link-primary">Lấy ID FB</a>
-
-   </div>
-
-   <div class="col-md-4">
-
-      <label for="validationCustom02" class="form-label">Mail</label>
-
-      <input type="text" class="form-control" id="validationCustom02" name="mail" value="{{data.mail}}" required>
-
-      <div class="valid-feedback">
-
-         tốt lắm !
-
-      </div>
-
-      <div class="invalid-feedback">
-
-         vui lòng nhập trường này !
-
-      </div>
-
-   </div>
-
-   <div class="col-md-4">
+    <div class="col-md-4">
 
       <label for="validationCustom02" class="form-label">Username</label>
 
-      <input type="text" class="form-control" id="validationCustom02" name="slug" value="{{data.slug}}" required>
+      <input type="text" class="form-control" id="validationCustom02" name="facebook" value="{{data.slug}}" required>
 
       <div class="valid-feedback">
 
-         tốt lắm !
+        tốt lắm !
 
       </div>
 
       <div class="invalid-feedback">
 
-         vui lòng nhập trường này !
+        vui lòng nhập trường này !
 
       </div>
 
-   </div>
+    </div>
 
-   </div>
+    <div class="col-md-4">
 
-   <div class="col-md-12">
+      <label for="validationCustom02" class="form-label">ID Facebook</label>
+
+      <input type="text" class="form-control" id="validationCustom02" name="facebook" value="{{data.facebook}}" required>
+
+      <div class="valid-feedback">
+
+        tốt lắm !
+
+      </div>
+
+      <div class="invalid-feedback">
+
+        vui lòng nhập trường này !
+
+      </div>
+
+    </div>
+
+    <div class="col-12">
 
       <button class="btn btn-primary" type="submit">Submit form</button>
 
-   </div>
+    </div>
 
-</form>
+  </form>
+
+</div>
+
+
 
 
 
