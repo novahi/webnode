@@ -10,18 +10,22 @@ class Authentication {
       password
     })
     .then(data => {
+      if(data) {
+        res.json({
+          "message": "Login successful! "
+        })
+        return
+      }
+    })
+    .catch(err => {
       res.json({
-        "message": "Login successful! "
+        "message": "Login Faile! "
       })
     })
-    .catch(err) {
-      res.json({
-        "message": err
-      })
-    }
-    next()
   }
   sigin(req, res, next) {
     
   }
 }
+
+module.exports = new Authentication();

@@ -1,4 +1,3 @@
-const User = require('../models/User');
 
 class UserController {
     show(req, res, next) {

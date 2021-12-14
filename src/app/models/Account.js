@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const Accounts = new Schema(
     {
         username: { type: String,  unique: true },
-        password { type: String, min: 6
+        password: { type: String, min: 6 }
     },
     {
         timestamps: true,
