@@ -9,7 +9,7 @@ class Authentication {
   .then(data => res.send(data))
   .catch(err => res.json({
     "message": "login fail !"
-  })
+  }))
   }
   validatorSigin (req, res, next) {
   

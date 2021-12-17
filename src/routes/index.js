@@ -4,7 +4,7 @@ const userRouter = require('./user');
 const authenticationRouter = require('./authentication');
 
 function route(app) {
-    app.use('/account', authenticationRouter);
+    app.use('/login', authenticationRouter);
     app.use('/news', newsRouter);
     app.use('/users', userRouter);
     app.use('/', siteRouter);
