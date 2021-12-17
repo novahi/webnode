@@ -1,15 +1,19 @@
 const User = require('../models/User');
 const AccountModels = require('../models/Account');
 
-class Authentication {
+class LoginController {
   validatorLogin (req, res, next) {
   const username = req.body.username
   const password = req.body.password
   AccountModels.findOne({username,password})
   .then(data => {
     try {
-      if(data !== undefined) {
-        res.send(data)
+      if(data != null) {
+        res.status(200).json(data)
+      } else {
+        res.status(304).json({
+          "message": "login fail !"
+        })
       }
     } catch (e) {
       res.status(304).json({
@@ -17,21 +21,13 @@ class Authentication {
       })
     }
   })
-  .catch(err => res.json({
-    "message": "login fail !"
-  }))
   
   }
-  validatorSigin (req, res, next) {
-  
-  }
-  login (req, res, next) {
+  login(req, res, next) {
     res.render('login')
   }
-  sigin (req, res, next) {
-    res.render('sigin')
-  }
+  
   
 }
 
-module.exports = new Authentication();
+module.exports = new LoginController();
