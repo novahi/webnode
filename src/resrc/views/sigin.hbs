@@ -1,0 +1,47 @@
+<form  method="POST"  class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Username</label>
+    <input type="text" class="form-control" id="validationCustom01" name="username"  required>
+    <div class="valid-feedback">
+      tốt lắm !
+    </div>
+    <div class="invalid-feedback">
+      vui lòng nhập trường này !
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Password</label>
+    <input type="text" class="form-control" id="validationCustom02" name="password"  required>
+    <div class="valid-feedback">
+      tốt lắm !
+    </div>
+    <div class="invalid-feedback">
+      vui lòng nhập trường này !
+    </div>
+  </div>
+ 
+<div class="col-12">
+  <button class="btn btn-primary" type="submit">Sigin</button>
+</div>
+</form>
+
+
+<script>
+   (function() {
+  'use strict'
+
+  var forms = document.querySelectorAll('.needs-validation')
+
+  Array.prototype.slice.call(forms)
+    .forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>

@@ -2,30 +2,25 @@ const User = require('../models/User');
 const Account = require('../models/Account');
 
 class Authentication {
-  login(req, res, next) {
-    const user = req.body.username
-    const password = req.body.password
-    Account.findOne({
-      user,
-      password
-    })
-    .then(data => {
-      if(data) {
-        res.json({
-          "message": "Login successful! "
-        })
-        return
-      }
-    })
-    .catch(err => {
-      res.json({
-        "message": "Login Faile! "
-      })
-    })
+  validatorLogin (req, res, next) {
+  const username = req.body.username
+  const password = req.body.password
+  Account.findOne({username,password})
+  .then(data => res.send(data))
+  .catch(err => res.json({
+    "message": "login fail !"
+  })
   }
-  sigin(req, res, next) {
-    
+  validatorSigin (req, res, next) {
+  
   }
+  login (req, res, next) {
+    res.render('login')
+  }
+  sigin (req, res, next) {
+    res.render('sigin')
+  }
+  
 }
 
 module.exports = new Authentication();
