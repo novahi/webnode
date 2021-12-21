@@ -1,4 +1,4 @@
-
+const User = require('../models/User')
 class UserController {
     show(req, res, next) {
         User.findOne({ slug: req.params.slug })

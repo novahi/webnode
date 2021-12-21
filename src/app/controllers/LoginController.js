@@ -9,14 +9,14 @@ class LoginController {
   .then(data => {
     try {
       if(data != null) {
-        res.status(200).json(data)
+        res.json(data)
       } else {
-        res.status(304).json({
+        res.json({
           "message": "login fail !"
         })
       }
     } catch (e) {
-      res.status(304).json({
+      res.json({
         "message": "login fail !"
       })
     }
