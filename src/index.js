@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const methodOverride = require('method-override')
-
+const dotenv = require('dotenv').config()
 const handlebars = require('express-handlebars');
 
 const route = require('./routes');
