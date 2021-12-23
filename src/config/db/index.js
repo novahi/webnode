@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const uri =
-    'mongodb+srv://admin:quyngusi1@qingusi.msf0k.mongodb.net/user_data?retryWrites=true&w=majority';
-
+const uri = process.env.URL_DB
 async function connect() {
     try {
         await mongoose.connect(uri, {
@@ -9,9 +7,9 @@ async function connect() {
             useUnifiedTopology: true,
             // useCreateIndex: true
         });
-        console.log('connect successfully...!');
+        console.log('Connect To DB Successfully!');
     } catch (error) {
-        console.log('connect fail...!');
+        console.log('Connect To DB Fail!');
     }
 }
 

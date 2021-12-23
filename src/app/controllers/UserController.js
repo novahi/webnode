@@ -17,7 +17,7 @@ class UserController {
     }
     store(req, res, next) {
         const formData = req.body;
-        formData.image = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662`
+        formData.image = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&${process.env.TOKEN_FB}`
         const newUser = new User(formData);
         newUser
             .save()
