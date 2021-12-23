@@ -2,17 +2,17 @@
 
    <div class="card mt-4 container justify-content-center placeholder-glow" style="width: 18rem;">
 
-      <img src="{{user.image}}" class="card-img-top" alt="Loading...!" id="img">
+      <img src="{{data.image}}" class="card-img-top" alt="Loading...!" id="img">
 
       <div class="card-body">
 
-         <h5 class="card-title" style="text-align: center" id="title"> {{user.name}}</h5>
+         <h5 class="card-title" style="text-align: center" id="title"> {{data.name}}</h5>
 
          <p class="card-text" id="text">
 
             <ion-icon name="logo-facebook"></ion-icon>
 
-            {{user.facebook}}
+            {{data.facebook}}
 
          </p>
 
@@ -20,7 +20,7 @@
 
             <ion-icon name="mail"></ion-icon>
 
-            {{user.mail}}
+            {{data.mail}}
 
          </p>
 
@@ -28,11 +28,11 @@
 
             <ion-icon name="home"></ion-icon>
 
-            {{user.address}}
+            {{data.address}}
 
          </p>
 
-         <a href="http://m.me/{{user.facebook}}" class="btn btn-primary col-6"  id="btn">Message</a>
+         <a href="http://m.me/{{data.facebook}}" class="btn btn-primary col-6"  id="btn">Message</a>
 
       </div>
 
