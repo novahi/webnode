@@ -5,7 +5,7 @@ const signUpRouter = require('./signUp')
 
 
 function route(app) {
-    app.use('/signup')
+    app.use('/signup', signUpRouter)
     app.use('/news', newsRouter);
     app.use('/users', userRouter);
     app.use('/', siteRouter);
