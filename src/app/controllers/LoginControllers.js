@@ -3,7 +3,7 @@ const AccountModels = require('../models/Account')
 const jwt = require('jsonwebtoken')
 class SignInControllers {
   async get(req, res) {
-    return await res.render('sigin_in')
+    return await res.render('login')
   }
 
   async post(req, res) {

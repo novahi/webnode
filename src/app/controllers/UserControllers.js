@@ -1,5 +1,6 @@
 const User = require('../models/User')
 class UserController {
+  // [Get] /users/:slug
   async show(req, res, next) {
     try {
       const data = await User.findOne({
@@ -14,9 +15,7 @@ class UserController {
       next()
     }
   }
-  async create(req, res, next) {
-    return await res.render('create')
-  }
+  // [Get] /users
   async view(req, res, next) {
     try {
       const data = await User.find({}).lean()
@@ -27,19 +26,8 @@ class UserController {
       next()
     }
   }
-  async store(req, res, next) {
-    try {
-      const formData = await req.body
-      formData.image = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&${process.env.TOKEN_FB}`
-      const newUser = await new User(formData)
-      const data = await newUser.save()
-      return res.redirect('/users')
 
-
-    } catch (e) {
-      next()
-    }
-  }
+  // [Get] /user/:id/edit 
   async edit(req, res, next) {
     try {
       const data = await User.findById(req.params.id).lean()
@@ -50,6 +38,7 @@ class UserController {
       next()
     }
   }
+  // [Put] /user/:id 
   async update(req, res, next) {
     try {
       const data = await User.updateOne({
@@ -60,6 +49,7 @@ class UserController {
       next()
     }
   }
+  // [Delete] /user/:id
   async destroy(req, res, next) {
     try {
       const data = await User.deleteOne({

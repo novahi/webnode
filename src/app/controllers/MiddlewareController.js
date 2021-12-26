@@ -4,18 +4,19 @@ const Accounts = require('../models/Account')
 
 class Middleware {
   async checkLogin(req, res, next) {
-    const token = req.headers.token
-    
+    const token = req.cookies.accessToken
+    if(!token) {
+      res.redirect("/login")
+    }
+    // token check 
+    if(token) {
+      const tokenCheck = await jwt.verify(token,process.env.JWT_ACCESS_KEY)
+      console.log(tokenCheck)
+    } else {
+      res.redirect('/login')
+    }
   }
-  
-  
   }
-  
-  async createUser (req, res, next) {
-    const formData = req.body
-    console.log(formData)
-  }
-  
 }
 
 module.exports = new Middleware()
