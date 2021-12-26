@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const login  = require('../app/controllers/SignUpControllers');
+const signUp  = require('../app/controllers/SignUpControllers');
 
-router.get('/', login.get)
-router.post('/', login.post, login.create)
+router.get('/', signUp.get)
+router.post('/', signUp.post)
 
 
 
