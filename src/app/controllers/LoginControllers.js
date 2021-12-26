@@ -29,7 +29,7 @@ class SignInControllers {
         httpOnly: true,
         path: "/",
         sameSite: "strict",
-        secure: false
+        secure: true
       })
       }
       res.status(200).redirect('/')
