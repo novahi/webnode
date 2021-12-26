@@ -11,8 +11,10 @@ class SignUpControllers {
       const formdata = req.body
       formData.image = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&${process.env.TOKEN_FB}`
       
+   } catch(e) {
+     
    }
-   
+}   
    
   
 }

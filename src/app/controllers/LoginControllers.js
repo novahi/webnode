@@ -13,21 +13,28 @@ class SignInControllers {
       if(!data) {
         return res.status(404).json("Vui lòng nhập Tài Khoản !")
       }
-      if(user.password != formData.password) {
+      if(data.password != formData.password) {
         return res.status(404).json("Vui lòng nhập Mật Khẩu !")
       }
-      if(data && user.password === formData.password) {
-       jwt.sign({
-         id: user.id
+      if(data) {
+      const accessToken =  jwt.sign({
+         id: data._id
        },
        process.env.JWT_ACCESS_KEY,
        {
          expiresIn: "120s"
        }
        ) 
+      res.cookie("accessToken", accessToken, {
+        httpOnly: true,
+        path: "/",
+        sameSite: "strict",
+        secure: false
+      })
       }
+      res.status(200).redirect('/')
     } catch(e) {
-      res.json('error')
+      res.json("error")
     }
   }
 
