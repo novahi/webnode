@@ -41,9 +41,11 @@ class UserController {
   // [Put] /user/:id 
   async update(req, res, next) {
     try {
+      const formData = req.body
+      formData.image  = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&${process.env.TOKEN_FB}`
       const data = await User.updateOne({
         _id: req.params.id
-      }, req.body)
+      }, formData)
       return res.redirect('/users')
     } catch (e) {
       next()
