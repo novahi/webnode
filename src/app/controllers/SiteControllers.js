@@ -4,7 +4,7 @@ class SiteController {
   // [Get] home page
     async home(req, res, next) {
       const token = res.cookie.accessToken
-      const verifyToken = jwt.verifyToken(token,process.env.JWT_ACCESS_KEY)
+      const verifyToken = jwt.verify(token,process.env.JWT_ACCESS_KEY)
       const id = verifyToken.id
       const data = await User.findOne({_id: id})
         res.render('home',{data});
