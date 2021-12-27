@@ -9,7 +9,7 @@ class SiteController {
       }
       const verifyToken = jwt.verify(token,process.env.JWT_ACCESS_KEY)
       const id = verifyToken.id
-      const data = await User.findOne({_id: id})
+      const data = await User.findOne({_id: id}).lean()
       return await res.render('home',{data});
     }
     // [Get] /search
