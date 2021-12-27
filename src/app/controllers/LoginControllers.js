@@ -2,7 +2,7 @@ const User = require('../models/User')
 const Account = require('../models/Account')
 
 const jwt = require('jsonwebtoken')
-class SignInControllers {
+class LoginControllers {
   async get(req, res) {
     return await res.render('login')
   }
@@ -19,27 +19,27 @@ class SignInControllers {
       }
       if(data) {
       const accessToken =  jwt.sign({
-         id: data._id
+         id: data.id
        },
        process.env.JWT_ACCESS_KEY,
        {
-         expiresIn: "120s"
+         expiresIn: "300s"
        }
        ) 
       res.cookie("accessToken", accessToken, {
         httpOnly: true,
         path: "/",
         sameSite: "strict",
-        secure: true
+        secure: false
       })
       }
       res.status(200).redirect('/')
     } catch(e) {
-      res.json("error")
+      res.json("Login failed, server side error !")
     }
   }
 
 }
 
-  module.exports = new SignInControllers()
+  module.exports = new LoginControllers()
   

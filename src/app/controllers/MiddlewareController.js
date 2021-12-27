@@ -9,7 +9,7 @@ class Middleware {
         res.redirect("/login")
       }
       // token check 
-      if (token) {
+      
         const tokenCheck = await jwt.verify(token, process.env.JWT_ACCESS_KEY)
         if(tokenCheck) {
           next()

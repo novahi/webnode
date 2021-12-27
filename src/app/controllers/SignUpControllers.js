@@ -4,9 +4,9 @@ const Account = require('../models/Account')
 class SignUpControllers {
   // [Get] /signup
   async get(req, res) {
-    return await res.render('sigin_up')
+    return await res.render('signUp')
   }
-  // [Post] /signup (Handling new users)
+  // [Post] /signup (Processing new accounts and user information)
   async post (req, res) {
     try {
       const formData = req.body
@@ -14,10 +14,12 @@ class SignUpControllers {
         return res.redirect('back')
       }
       const { username, password, ...other } = formData
+      const username1 =  username.toLowerCase()
+      console.log(username1)
       other.image = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&${process.env.TOKEN_FB}`
       const newUser = await new User(other).save()
       const id = newUser._id
-      const newAccount = await new Account({id,username,password})
+      const newAccount = await new Account({id,username: username1,password}).save()
       res.redirect('/login')
       
    } catch(e) {
