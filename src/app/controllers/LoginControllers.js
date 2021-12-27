@@ -1,5 +1,6 @@
-const User = require('../models/User')
-const AccountModels = require('../models/Account')
+import User from '../models/User'
+import Account from '../models/Account'
+
 const jwt = require('jsonwebtoken')
 class SignInControllers {
   async get(req, res) {

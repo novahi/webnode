@@ -1,4 +1,4 @@
-const User = require('../models/User')
+import User from '../models/User'
 class UserController {
   // [Get] /users/:slug
   async show(req, res, next) {
@@ -30,6 +30,7 @@ class UserController {
   // [Get] /user/:id/edit 
   async edit(req, res, next) {
     try {
+     
       const data = await User.findById(req.params.id).lean()
       return res.render('edit', {
         data

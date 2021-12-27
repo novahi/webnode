@@ -1,6 +1,5 @@
-const User = require('../models/User')
-const Accounts = require('../models/Account')
-
+import User from '../models/User'
+import Account from '../models/Account'
 
 class Middleware {
   async checkLogin(req, res, next) {

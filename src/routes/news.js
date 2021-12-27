@@ -1,7 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
-const newsController = require('../app/controllers/NewsControllers');
+import express from 'express'
+import newsController from '../app/controllers/NewsControllers'
+const router = express.Router()
 
 router.get('/:slug', newsController.show);
 router.get('/', newsController.index);

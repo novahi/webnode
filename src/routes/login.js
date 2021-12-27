@@ -1,8 +1,7 @@
-const express = require('express');
+import express from 'express');
+import Middleware from '../app/controllers/MiddlewareController');
+import login from '../app/controllers/LoginControllers');
 const router = express.Router();
-const Middleware = require('../app/controllers/MiddlewareControllers');
-const login = require('../app/controllers/LoginControllers');
-
 
 router.get('/', login.get)
 router.post('/', login.post)

@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const SiteController = require('../app/controllers/SiteControllers');
+import express from 'express'
+import SiteController from '../app/controllers/SiteControllers'
+const router = express.Router()
 
 router.get('/search', SiteController.search);
 router.get('/', SiteController.home);

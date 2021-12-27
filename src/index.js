@@ -1,11 +1,11 @@
-const path = require('path');
-const express = require('express');
-const methodOverride = require('method-override')
-const dotenv = require('dotenv').config()
-const handlebars = require('express-handlebars');
-const cookieParser = require("cookie-parser")
-const route = require('./routes');
-const db = require('./config/db');
+import path from 'path'
+import express from 'express'
+import methodOverride from 'method-override'
+import dotenv from 'dotenv'.config()
+import handlebars from 'express-handlebars');
+import cookieParser from 'cookie-parser'
+import route from './routes'
+import db from './config/db'
 const app = express();
 const port = process.env.PORT || 3000;
 

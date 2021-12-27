@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
+import slug from 'mongoose-slug-generator'
 const Schema = mongoose.Schema;
-const slug = require('mongoose-slug-generator');
 mongoose.plugin(slug);
 
 const User = new Schema({

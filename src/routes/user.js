@@ -1,9 +1,6 @@
-const express = require('express');
+import express from 'express'
+import userController from '../app/controllers/UserControllers'
 const router = express.Router();
-
-const userController = require('../app/controllers/UserControllers');
-
-
 
 router.get('/', userController.view);
 router.get('/:id/edit',userController.edit)

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 async function connect() {
     try {
         await mongoose.connect(process.env.URL_DB, {

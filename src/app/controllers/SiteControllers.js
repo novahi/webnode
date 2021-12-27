@@ -1,5 +1,4 @@
-const { MongoosesToObject } = require('../../util/mongoose');
-const User = require('../models/User');
+import User = from '../models/User'
 
 class SiteController {
   // [Get] home page
