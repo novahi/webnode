@@ -1,6 +1,6 @@
 const express = require('express')
 const userController = require('../app/controllers/UserControllers')
-const Middleware = require('../app/controllers/MiddlewareController');
+const Middleware = require('../app/controllers/MiddlewareControllers');
 const router = express.Router();
 
 router.get('/',userController.view);
