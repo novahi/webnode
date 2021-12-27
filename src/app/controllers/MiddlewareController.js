@@ -17,7 +17,7 @@ class Middleware {
           res.redirect('/login')
         }
       } 
-    } catch (e) {
+     catch (e) {
       res.json("Server error")
     }
   }
