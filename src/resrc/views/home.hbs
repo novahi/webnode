@@ -11,6 +11,18 @@
   <a class="btn link-primary"  href="/signup">Create New User</a>
 </div>
 
-<div class="mt-4">
-  <a class="btn link-primary" href="/logout" >Logout</a>
-</div>
+<h1 id="h1" style="text-align: center;word-wrap: break-word"></h1>
+<script>
+let h1 = document.getElementById('h1')
+let i = 0
+let text = `Xin chào {{data.name}} ! Hiện Website đang phát triển nên rất cần những phản hồi tới lienhe@zeqika.tk (nếu rảnh) để chúng tôi có thể khắc phục và phát triển thêm !`
+  function nhapText() {
+     if(i <= text.length) {
+        h1.textContent += text.charAt(i)
+        i++
+        setTimeout(nhapText, 50)
+        
+     }
+  }
+  nhapText()
+</script>
