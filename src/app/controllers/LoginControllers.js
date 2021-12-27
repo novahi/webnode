@@ -9,8 +9,10 @@ class LoginControllers {
 
   async post(req, res) {
     const formData = req.body
+    const {username} = formData
+    const username1 = username.toLowerCase()
     try {
-      const data = await Account.findOne({username: formData.username})
+      const data = await Account.findOne({username: username1})
       if(!data) {
         return res.status(404).json("Vui lòng nhập Tài Khoản !")
       }
