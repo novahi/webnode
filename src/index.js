@@ -1,7 +1,7 @@
 import path from 'path'
 import express from 'express'
 import methodOverride from 'method-override'
-import dotenv from 'dotenv'.config()
+import dotenv from 'dotenv'
 import handlebars from 'express-handlebars');
 import cookieParser from 'cookie-parser'
 import route from './routes'
@@ -9,6 +9,8 @@ import db from './config/db'
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Use Dotenv 
+dotenv.config()
 // Use static folder
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
