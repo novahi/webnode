@@ -8,8 +8,6 @@ const route = require('./routes')
 const db = require('./config/db')
 const app = express();
 const port = process.env.PORT || 3000;
-
-// Use Dotenv 
 // Use static folder
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
