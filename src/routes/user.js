@@ -3,10 +3,10 @@ const userController = require('../app/controllers/UserControllers')
 const Middleware = require('../app/controllers/MiddlewareController');
 const router = express.Router();
 
-router.get('/',Middleware.checkLogin,userController.view);
-router.get('/:id/edit', Middleware.checkLogin, userController.edit)
-router.put('/:id',Middleware.checkLogin, userController.update)
-router.delete('/:id',Middleware.checkLogin, userController.destroy)
-router.get('/:slug', Middleware.checkLogin, userController.show);
+router.get('/',userController.view);
+router.get('/:id/edit',  userController.edit)
+router.put('/:id', userController.update)
+router.delete('/:id', userController.destroy)
+router.get('/:slug',  userController.show);
 
 module.exports = router;
