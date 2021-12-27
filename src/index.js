@@ -2,7 +2,7 @@ import path from 'path'
 import express from 'express'
 import methodOverride from 'method-override'
 import dotenv from 'dotenv'
-import handlebars from 'express-handlebars');
+import handlebars from 'express-handlebars'
 import cookieParser from 'cookie-parser'
 import route from './routes'
 import db from './config/db'

@@ -1,5 +1,5 @@
-import express from 'express'
-import SiteController from '../app/controllers/SiteControllers'
+const express = require('express')
+const SiteController = require('../app/controllers/SiteControllers')
 const router = express.Router()
 
 router.get('/search', SiteController.search);

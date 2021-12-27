@@ -1,8 +1,8 @@
-import newsRouter from './news'
-import siteRouter from './site'
-import userRouter from './user'
-import signUpRouter from './signUp'
-import loginRouter from './login'
+const newsRouter = require('./news')
+const siteRouter = require('./site')
+const userRouter = require('./user')
+const signUpRouter = require('./signUp')
+const loginRouter = require('./login')
 
 
 function route(app) {

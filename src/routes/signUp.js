@@ -1,5 +1,5 @@
-import express from 'express'
-import signUp from '../app/controllers/SignUpControllers'
+const express = require('express')
+const signUp = require('../app/controllers/SignUpControllers')
 const router = express.Router();
 
 router.get('/', signUp.get)

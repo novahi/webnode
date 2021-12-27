@@ -1,4 +1,4 @@
-import User from '../models/User'
+const User = require('../models/User')
 class UserController {
   // [Get] /users/:slug
   async show(req, res, next) {

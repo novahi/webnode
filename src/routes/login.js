@@ -1,6 +1,6 @@
-import express from 'express');
-import Middleware from '../app/controllers/MiddlewareController');
-import login from '../app/controllers/LoginControllers');
+const express = require('express');
+const Middleware = require('../app/controllers/MiddlewareController');
+const login = require('../app/controllers/LoginControllers');
 const router = express.Router();
 
 router.get('/', login.get)

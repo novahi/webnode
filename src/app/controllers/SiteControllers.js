@@ -1,4 +1,4 @@
-import User = from '../models/User'
+const User = require('../models/User')
 
 class SiteController {
   // [Get] home page

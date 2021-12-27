@@ -1,5 +1,5 @@
-import express from 'express'
-import userController from '../app/controllers/UserControllers'
+const express = require('express')
+const userController = require('../app/controllers/UserControllers')
 const router = express.Router();
 
 router.get('/', userController.view);
