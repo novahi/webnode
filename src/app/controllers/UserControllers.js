@@ -74,10 +74,10 @@ class UserController {
       const objId = jwt.verify(accessToken, process.env.JWT_ACCESS_KEY)
       const id = objId.id
       if(id === req.params.id) {
+      const deleteAccount = await Account.deleteOne({id})  
       const deleteUser = await User.deleteOne({
         _id: id
       })
-      const deleteAccount = await Account.deleteOne({id})
       return res.redirect('back')
       } else { res.status(404).json("can't do it because you don't have permission")}
     } catch (e) {
