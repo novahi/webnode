@@ -13,9 +13,10 @@
 
 <h1 id="h1" style="text-align: center;word-wrap: break-word"></h1>
 <script>
+let name = "{{data.name}}"
 let h1 = document.getElementById('h1')
 let i = 0
-let text = `Xin chào {{data.name}} ! Hiện Website đang phát triển nên rất cần những phản hồi tới lienhe@zeqika.tk (nếu rảnh) để chúng tôi có thể khắc phục và phát triển thêm !`
+let text = `Xin chào ${{name}} ! Hiện Website đang phát triển nên rất cần những phản hồi tới lienhe@zeqika.tk (nếu rảnh) để chúng tôi có thể khắc phục và phát triển thêm !`
   function nhapText() {
      if(i <= text.length) {
         h1.textContent += text.charAt(i)
