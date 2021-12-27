@@ -10,7 +10,7 @@ class SignInControllers {
   async post(req, res) {
     const formData = req.body
     try {
-      const data = await AccountModels.findOne({username: formData.username})
+      const data = await Account.findOne({username: formData.username})
       if(!data) {
         return res.status(404).json("Vui lòng nhập Tài Khoản !")
       }
