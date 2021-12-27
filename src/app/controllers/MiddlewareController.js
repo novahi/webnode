@@ -11,7 +11,9 @@ class Middleware {
       // token check 
       if (token) {
         const tokenCheck = await jwt.verify(token, process.env.JWT_ACCESS_KEY)
-        console.log(tokenCheck)
+        if(tokenCheck) {
+          next()
+        }
       } else {
         res.redirect('/login')
       }
