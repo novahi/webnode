@@ -16,7 +16,7 @@
 let name = "{{data.name}}"
 let h1 = document.getElementById('h1')
 let i = 0
-let text = `Xin chào ${{name}} ! Hiện Website đang phát triển nên rất cần những phản hồi tới lienhe@zeqika.tk (nếu rảnh) để chúng tôi có thể khắc phục và phát triển thêm !`
+let text = `Xin chào ${name} ! Hiện Website đang phát triển nên rất cần những phản hồi tới lienhe@zeqika.tk (nếu rảnh) để chúng tôi có thể khắc phục và phát triển thêm !`
   function nhapText() {
      if(i <= text.length) {
         h1.textContent += text.charAt(i)
