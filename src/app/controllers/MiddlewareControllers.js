@@ -5,11 +5,11 @@ class Check {
   async login(req, res, next) {
   try {
     const token = req.cookies.accessToken
+    req.userId = token
     if (!token) {
       res.redirect("/login")
     }
-    const decode = jwt.verify(token, process.env.JWT_ACCESS_KEY)
-    req.userId = decode.id
+    
       return next()
   } catch (e) {
     res.json("Server error")
