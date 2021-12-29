@@ -7,7 +7,7 @@ class UserController {
   async show(req, res, next) {
     try {
       const id = req.userId
-      const findData = Promise.all([User.findOne({
+      const findData =await Promise.all([User.findOne({
         slug: req.params.slug
       }).lean(),User.findOne({_id: id}).lean()])
       const [data, user] = findData
@@ -23,7 +23,7 @@ class UserController {
   async view(req, res, next) {
     try {
       const id = req.userId
-      const findData = Promise.all([User.find({}).lean(),User.findOne({_id: id}).lean()])
+      const findData =await Promise.all([User.find({}).lean(),User.findOne({_id: id}).lean()])
       const [data, user] = findData
       return res.render('user', {
         data,user
@@ -37,7 +37,7 @@ class UserController {
   async edit(req, res, next) {
     try {
       const id = req.userId
-      const findData = Promise.all([User.findById(req.params.id).lean(),User.findOne({_id: id}).lean()])
+      const findData =await Promise.all([User.findById(req.params.id).lean(),User.findOne({_id: id}).lean()])
       const [data, user] = findData
       return res.render('edit', {
         data,user
