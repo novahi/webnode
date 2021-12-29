@@ -37,12 +37,11 @@ class UserController {
   async edit(req, res, next) {
     try {
       const id = req.userId
-      const findData = Promise.all([User.findById({req.params.id}).lean(),User.findOne({_id: id}).lean()])
+      const findData = Promise.all([User.findById(req.params.id).lean(),User.findOne({_id: id}).lean()])
       const [data, user] = findData
       return res.render('edit', {
         data,user
-      }
-
+      })
     } catch (e) {
       next()
     }
