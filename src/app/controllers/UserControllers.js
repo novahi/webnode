@@ -6,10 +6,7 @@ class UserController {
   // [Get] /users/:slug
   async show(req, res, next) {
     try {
-      const token = req.userId
-      const decode = jwt.verify(token, process.env.JWT_ACCESS_KEY)
-      const id = decode.id
-      
+      const id = req.userId
       const findData = Promise.all([User.findOne({
         slug: req.params.slug
       }).lean(),User.findOne({_id: id}).lean()])
@@ -25,9 +22,7 @@ class UserController {
   // [Get] /users
   async view(req, res, next) {
     try {
-      const token = req.userId
-      const decode = jwt.verify(token, process.env.JWT_ACCESS_KEY)
-      const id = decode.id
+      const id = req.userId
       const findData = Promise.all([User.find({}).lean(),User.findOne({_id: id}).lean()])
       const [data, user] = findData
       return res.render('user', {
@@ -41,10 +36,7 @@ class UserController {
   // [Get] /user/:id/edit 
   async edit(req, res, next) {
     try {
-      const token = req.userId
-      const decode = jwt.verify(token, process.env.JWT_ACCESS_KEY)
-      const id = decode.id
-      
+      const id = req.userId
       const findData = Promise.all([User.findById(req.params.id).lean(),User.findOne({_id: id}).lean()])
       const [data, user] = findData
       return res.render('edit', {
