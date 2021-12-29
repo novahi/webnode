@@ -7,11 +7,11 @@ class Check {
     const token = req.cookies.accessToken
     if (!token) {
      return  res.redirect("/login")
-    }
+    } else {
     const decode = jwt.verify(token, process.env.JWT_ACCESS_KEY)
-    req.userId = decode.id
-    
+      req.userId = decode.id
       return next()
+    }
   } catch (e) {
     res.status(500).json("Server error")
   }
