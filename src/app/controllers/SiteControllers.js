@@ -11,8 +11,8 @@ class SiteController {
      }
       const verifyToken = jwt.verify(token,process.env.JWT_ACCESS_KEY)
       const id = verifyToken.id
-      const data = await User.findOne({_id: id}).lean()
-       return await res.render('home',{data});
+      const user = await User.findOne({_id: id}).lean()
+       return await res.render('home',{user});
     } catch(e) {res.json("Server Error")}
     }
     // [Get] /search

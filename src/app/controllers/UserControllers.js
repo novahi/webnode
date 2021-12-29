@@ -6,12 +6,13 @@ class UserController {
   // [Get] /users/:slug
   async show(req, res, next) {
     try {
-      const data = await User.findOne({
+      const id = req.userId
+      const findData = Promise.all([User.findOne({
         slug: req.params.slug
-      }).lean()
-
+      }).lean(),User.findOne({_id: id}).lean()])
+      const [data, user] = findData
       return res.render('viewuser', {
-        data
+        data,user
       })
 
     } catch (e) {
@@ -21,9 +22,11 @@ class UserController {
   // [Get] /users
   async view(req, res, next) {
     try {
-      const data = await User.find({}).lean()
+      const id = req.userId
+      const findData = Promise.all([User.find({}).lean(),User.findOne({_id: id}).lean()])
+      const [data, user] = findData
       return res.render('user', {
-        data
+        data,user
       })
     } catch (e) {
       next()
@@ -33,11 +36,13 @@ class UserController {
   // [Get] /user/:id/edit 
   async edit(req, res, next) {
     try {
-      const data = await User.findById(req.params.id).lean()
+      const id = req.userId
+      const findData = Promise.all([User.findById({req.params.id}).lean(),User.findOne({_id: id}).lean()])
+      const [data, user] = findData
       return res.render('edit', {
-        data
-      })
-     
+        data,user
+      }
+
     } catch (e) {
       next()
     }
