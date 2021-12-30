@@ -17,9 +17,10 @@
 
 <h1 id="h1" style="text-align: center;word-wrap: break-word"></h1>
 <script>
+{{#if user}} 
 const h1 = document.getElementById('h1')
 let i = 0
-let text = `Xin chào {{name}} ! Hiện Website đang phát triển nên rất cần những phản hồi tới lienhe@zeqika.tk (nếu rảnh) để chúng tôi có thể khắc phục và phát triển thêm !`
+let text = `Xin chào {{user.name}} ! Hiện Website đang phát triển nên token chỉ có hạn sử dụng trong 5phút hết 5phút bạn hãy đăng nhập lại để sử dụng các chức năng nhé !`
   function nhapText() {
      if(i <= text.length) {
         h1.textContent += text.charAt(i)
@@ -29,4 +30,5 @@ let text = `Xin chào {{name}} ! Hiện Website đang phát triển nên rất c
      }
   }
   nhapText()
+  {{/if}}
 </script>
