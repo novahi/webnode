@@ -19,7 +19,7 @@ const Accounts = new Schema({
     default: null
   }
 }, {
-  timestamps: {currentTime: () => new Date().toLocaleString("vi-VI", { timeZone: "Asia/Ho_Chi_Minh" })},
+  timestamps: { currentTime: () => new Date().toLocaleString("vi-VI", { timeZone: "Asia/Ho_Chi_Minh" })},
   versionKey: false
 }, );
 
