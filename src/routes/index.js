@@ -7,7 +7,7 @@ const logoutRouter = require('./logout')
 const middleware = require('../app/controllers/MiddlewareControllers')
 
 function route(app) {
-    app.use('/logout',middleware.check logoutRouter)
+    app.use('/logout',middleware.check, logoutRouter)
     app.use('/login', loginRouter)
     app.use('/signup', signUpRouter)
     app.use('/news', newsRouter);
