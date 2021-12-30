@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Account = require('../models/Account')
+const jwt = require('jsonwebtoken')
 
 class Check {
   async login(req, res, next) {
