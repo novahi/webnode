@@ -20,8 +20,9 @@
     <h1>Message</h1>
     <p id="text"></p>
   </div>
+  {{/if}}
 <script>
- 
+ {{if user}}
 const p = document.getElementById('text')
 let i = 0
 let text = `Đây là 1 blog cá nhân hiện đang phát triển để có thêm nhiều chức năng mới như: (nhắn tin trực tuyến , xem số ca mắc covid-19, lên lịch hẹn đá bóng, ...) Tôi mong sẽ thực hiện được sớm nhất có thể ! Nhưng hiện giờ vẫn đang trong giai đoạn thiết kế giao diện nên mong {{user.name}} thông cảm nhé ^^ !`
@@ -34,6 +35,5 @@ let text = `Đây là 1 blog cá nhân hiện đang phát triển để có thê
      }
   }
   nhapText()
-  
+  {{/if}}
 </script>
-{{/if}}
