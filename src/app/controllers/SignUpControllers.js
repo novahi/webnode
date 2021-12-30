@@ -16,10 +16,10 @@ class SignUpControllers {
       const { username, password, ...other } = formData
       const username1 =  username.toLowerCase()
       other.image = `https://graph.facebook.com/${req.body.facebook.trim()}/picture?height=1000&width=1000&ftype=large&${process.env.TOKEN_FB}`
-      const newAccount = await new Account({id,username: username1,password}).save()
+      const newAccount = await new Account({username: username1,password}).save()
       const newUser = await new User(other).save()
       const id = newUser._id
-      newAccount(id).save()
+      const setId = await Account.findById(newAccount._id).updateOne({id}).save()
       res.status(200).redirect('/login')
       
    } catch(e) {
