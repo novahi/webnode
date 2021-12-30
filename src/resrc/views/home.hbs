@@ -15,20 +15,25 @@
   <a class="btn link-primary"  href="/logout">Logout</a>
 </div>
 
-<h1 id="h1" style="text-align: center;word-wrap: break-word"></h1>
+{{if user}}
+  <div class="container mt-4" style="text-align: center">
+    <h1>Message</h1>
+    <p id="text"></p>
+  </div>
 <script>
-{{#if user}} 
-const h1 = document.getElementById('h1')
+ 
+const p = document.getElementById('text')
 let i = 0
-let text = `Xin chào {{user.name}} ! Hiện Website đang phát triển nên token chỉ có hạn sử dụng trong 5phút hết 5phút bạn hãy đăng nhập lại để sử dụng các chức năng nhé !`
+let text = `Đây là 1 blog cá nhân hiện đang phát triển để có thêm nhiều chức năng mới như: (nhắn tin trực tuyến , xem số ca mắc covid-19, lên lịch hẹn đá bóng, ...) Tôi mong sẽ thực hiện được sớm nhất có thể ! Nhưng hiện giờ vẫn đang trong giai đoạn thiết kế giao diện nên mong {{user.name}} thông cảm nhé ^^ !`
   function nhapText() {
      if(i <= text.length) {
-        h1.textContent += text.charAt(i)
+        p.textContent += text.charAt(i)
         i++
         setTimeout(nhapText, 50)
         
      }
   }
   nhapText()
-  {{/if}}
+  
 </script>
+{{/if}}
