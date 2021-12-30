@@ -20,7 +20,7 @@ class SignUpControllers {
       const newUser = await new User(other).save()
       const id = newUser._id
       const setId = await Account.findById(newAccount._id).updateOne({id}).save()
-      res.status(200).redirect('/login')
+     return res.status(200).redirect('/login')
       
    } catch(e) {
      res.status(404).json({"message": "Error! An error occurred. Please try again later"})   }
