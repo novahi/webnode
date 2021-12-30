@@ -15,7 +15,8 @@ const Accounts = new Schema({
   },
   id: {
     type: String,
-    unique: true
+    unique: true,
+    default: null
   }
 }, {
   timestamps: true,
