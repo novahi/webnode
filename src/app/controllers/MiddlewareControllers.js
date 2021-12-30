@@ -2,8 +2,8 @@ const User = require('../models/User')
 const Account = require('../models/Account')
 const jwt = require('jsonwebtoken')
 
-class Check {
-  async login(req, res, next) {
+class Middleware {
+  async check(req, res, next) {
   try {
     const token = req.cookies.accessToken
     if (!token) {
@@ -24,4 +24,4 @@ class Check {
 }
   
 
-module.exports = new Check()
+module.exports = new Middleware()
