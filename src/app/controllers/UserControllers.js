@@ -52,7 +52,7 @@ class UserController {
     try {
     const accessToken = req.cookies.accessToken;
     if(!accessToken) {
-      return res.json("Please login to perform the task")
+      return res.status(403).json("Please login to perform the task")
     }
     const objId = jwt.verify(accessToken,process.env.JWT_ACCESS_KEY) 
     const id = objId.id
@@ -63,7 +63,7 @@ class UserController {
         _id: id
       }, formData)
       return res.redirect('/users')
-   } else { res.status(404).json("can't do it because you don't have permission")}
+   } else { res.status(403).json("can't do it because you don't have permission")}
     } catch (e) {
       next()
     }
@@ -73,7 +73,7 @@ class UserController {
     try {
       const accessToken = req.cookies.accessToken;
       if (!accessToken) {
-        return res.json("Please login to perform the task")
+        return res.status(403).json("Please login to perform the task")
       }
       const objId = jwt.verify(accessToken, process.env.JWT_ACCESS_KEY)
       const id = objId.id
@@ -83,7 +83,7 @@ class UserController {
         _id: id
       })
       return res.redirect('back')
-      } else { res.status(404).json("can't do it because you don't have permission")}
+      } else { res.status(403).json("can't do it because you don't have permission")}
     } catch (e) {
       next()
     }

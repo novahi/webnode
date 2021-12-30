@@ -6,9 +6,12 @@ class Check {
   try {
     const token = req.cookies.accessToken
     if (!token) {
-     return  res.redirect("/login")
+     return  res.status(200).redirect("/login")
     } else {
     const decode = jwt.verify(token, process.env.JWT_ACCESS_KEY)
+    if(!decode) {
+      res.status(404).json("You are using fake authentication code, please login to use our service !")
+    }
       req.userId = decode.id
       return next()
     }

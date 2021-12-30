@@ -14,10 +14,10 @@ class LoginControllers {
     try {
       const data = await Account.findOne({username: username1})
       if(!data) {
-        return res.status(404).json("Vui lòng nhập Tài Khoản !")
+        return res.status(401).json("Vui lòng nhập Tài Khoản !")
       }
       if(data.password != formData.password) {
-        return res.status(404).json("Vui lòng nhập Mật Khẩu !")
+        return res.status(401).json("Vui lòng nhập Mật Khẩu !")
       }
       if(data) {
       const accessToken =  jwt.sign({
@@ -37,7 +37,7 @@ class LoginControllers {
       }
       res.status(200).redirect('/')
     } catch(e) {
-      res.json("Login failed, server side error !")
+      res.status(404).json("Login failed, server side error !")
     }
   }
 
